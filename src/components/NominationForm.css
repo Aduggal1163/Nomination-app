@@ -1,0 +1,70 @@
+:root {
+    --secondary-color: #003366;
+    --secondary-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #f3f9fd;
+    border-radius: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: var(--secondary-font-family);
+    color: var(--secondary-color);
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .nomination-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nomination-form label {
+    font-weight: 600;
+  }
+  
+  .nomination-form input,
+  .nomination-form textarea,
+  .nomination-form select {
+    padding: 10px 14px;
+    border: 2px solid #c6d9ec;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .nomination-form select {
+    background-color: white;
+  }
+  
+  .nomination-form button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nomination-form button:hover {
+    background-color: #00509e;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .req{
+    color: red;
+  }
