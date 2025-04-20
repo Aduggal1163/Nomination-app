@@ -7,6 +7,7 @@ export default function NominationForm() {
     const [teamname, setteamname] = useState("");
     const [description, setdescription] = useState("");
     const [awardtype, setawardtype] = useState("");
+    const [data,setdata]=useState({});
     const navigate = useNavigate();
 
     const saveToLocalStorage = () => {
@@ -16,6 +17,7 @@ export default function NominationForm() {
             description,
             awardtype
         };
+        if(name=='' || teamname=='' || description=='' || awardtype=='') return;
         localStorage.setItem("data", JSON.stringify(formData));
     };
 
@@ -32,10 +34,16 @@ export default function NominationForm() {
 
     const onnext = (e) => {
         e.preventDefault();
+        const storeddata = JSON.parse(localStorage.getItem("data"))
+        if(!storeddata || storeddata.name =='' || storeddata.teamname =='' || storeddata.description =='' || storeddata.awardtype =='')
+            {
+                toast.error("Please fill in all fields before proceeding.")
+                return;
+            }
         console.log(name, teamname, description, awardtype);
         saveToLocalStorage();
-        clearForm();
         navigate("/details");
+        clearForm();
     };
 
     const clearForm = () => {

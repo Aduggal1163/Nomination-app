@@ -29,4 +29,19 @@
   .details-table tr:hover {
     background-color: #f9f9f9;
   }
+
+  .detail-button{
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 88rem;
+    margin-top: 2rem;
+  }
+
+  .detail-button:hover{
+    background-color: rgb(39, 102, 179);
+  }
   

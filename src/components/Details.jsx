@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Details.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Details() {
-    const data = JSON.parse(localStorage.getItem("data"))
+    const [data,setdata]=useState({});
+    const navigate=useNavigate();
+    useEffect(()=>{
+        const storeddata = JSON.parse(localStorage.getItem("data"))
+        setdata(storeddata);
+        console.log(storeddata);
+    },[])
+    const goback=()=>{
+        navigate("/nomination-form")
+    }
     return (
         <div className="details-container">
             <h1>Details</h1>
@@ -24,6 +34,7 @@ export default function Details() {
                     </tr>
                 </tbody>
             </table>
+            <button className='detail-button' onClick={goback}>Back</button>
         </div>
     );
 }
